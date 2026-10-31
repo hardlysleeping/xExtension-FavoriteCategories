@@ -240,6 +240,13 @@ encouraged.** The parts worth reading are `store.php` (the whole persistent stat
 `extension.php` (`injectJsVars()`, the page payload) and `static/pin.js` (the filtering, and
 the comment at the top explaining the non-conflict contract).
 
+**1.4.1** — the pin button stops colliding with a sibling's button in subscription management.
+
+- FreshRSS styles every `.btn` inside a category box's header as an absolutely positioned toggle (the
+  rule is written for the stats page's +/- buttons), so the pin injected into `div.box-title` landed at
+  `right: 1rem` on top of a neighbouring extension's button. It now sits in the text flow, with the
+  positioning pinned by `!important` so no future core or theme rule can re-stack it.
+
 **1.4.0** — one name, no choice.
 
 - Renamed to **Pinned Categories**. The folder, class, state file and GitHub repository keep the
